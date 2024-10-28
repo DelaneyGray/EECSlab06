@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <h1>
+         EECS 348 Lab Seven Practice Four
+        </h1>
+        <style>
+            button {
+            padding: 10px 20px;
+            background-color: pink;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            }
+
+            button:hover {
+                background-color: rgb(252, 183, 194);
+            }
+        </style>
+    </head>
+
+    <body>
+        <form id="tableForm" action="practice4.php" method="post">
+            <label for="userInt">Size of multiplication table:</label>
+            <input type="text" id="userInt" name="number" min="1" size="30" required />
+            <br><br>
+            <button type="button" onclick="submitTable()">Generate table</button>
+        </form>
+    
+        <script>
+            function submitTable(){
+                document.getElementById('tableForm').submit();
+            }
+        </script>
+    </body>
+</html>

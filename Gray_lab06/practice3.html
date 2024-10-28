@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <h1>
+            EECS 348 Lab Seven Practice Three
+        </h1>
+
+    <style>
+        button {
+            padding: 10px 20px;
+            background-color: pink;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            }
+
+        button:hover {
+            background-color: rgb(252, 183, 194);
+        }
+    </style>
+        
+    </head>
+    <body>
+        <br> First password: <input type="text" id="pass1" size="30" /> <br/>
+        <br> Second Password: <input type="text" id="pass2" size="30" /> <br/>
+        <br><button onclick="validate()"> Validate </button>
+
+        <script>
+            function validate(){
+                const pass1 = document.getElementById("pass1").value;
+                const pass2 = document.getElementById("pass2").value;
+                
+                if (pass1.length < 8){
+                    alert("Password must be at least 8 characters long.");
+                    return false;
+                }
+                if (pass1 !== pass2){
+                    alert("Passwords do not match!");
+                    return false;
+                }
+                alert("Passwords Valid!");
+                return true;
+            }
+        </script>
+    
+    </body>
+</html>

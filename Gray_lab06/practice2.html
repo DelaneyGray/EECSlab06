@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <h1>
+            EECS 348 Lab Seven Practice Two
+        </h1> 
+
+        <style>
+            :root {
+                --borderWidth: 2px;
+                --borderColor: rgb(0,0,0);
+                --backgroundColor: white;
+            }
+
+            #box {
+                border: var(--borderWidth) solid var(--borderColor);
+                padding: 10px;
+                background-color: var(--backgroundColor);
+                width: fit-content;
+            }
+
+            button {
+            padding: 10px 20px;
+            background-color: pink;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            }
+
+            button:hover {
+                background-color: rgb(252, 183, 194);
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="box">
+            This is a paragraph!
+        </div>
+   
+        <br> Border R(0-255): <input type="text" id="borderR" min="0" max="255"
+        size = "30" /> <br/>
+
+        <br> Border G(0-255): <input type="text" id="borderG" min="0" max="255"
+        size="30" /> <br/>
+
+        <br> Border B(0-255): <input type="text" id="borderB" min="0" max="255"
+        size="30" /> <br/>
+
+        <br> Border Width: <input type="text" id="borderWidth" min="1"
+        size="30" /> <br/>
+
+        <br> Background R(0-255): <input type="text" id="backgroundR" min="0" max="255"
+        size = "30" /> <br/>
+
+        <br> Background G(0-255): <input type="text" id="backgroundG" min="0" max="255"
+        size="30" /> <br/>
+
+        <br> Background B(0-255): <input type="text" id="backgroundB" min="0" max="255"
+        size="30" /> <br/>
+
+
+
+        <br>
+    
+       <button onclick="updateBox()">Update!</button>
+
+
+        <script>
+            function updateBox() {
+                
+                const r = document.getElementById('borderR').value || 0;
+                const g = document.getElementById('borderG').value || 0;
+                const b = document.getElementById('borderB').value || 0;
+
+                const width = document.getElementById('borderWidth').value || 2;
+
+                const br = document.getElementById('backgroundR').value || 255;
+                const bg = document.getElementById('backgroundG').value || 255;
+                const bb = document.getElementById('backgroundB').value || 255;
+              
+                document.documentElement.style.setProperty('--borderColor', `rgb(${r}, ${g}, ${b})`);
+                document.documentElement.style.setProperty('--borderWidth', `${width}px`);
+                document.documentElement.style.setProperty('--backgroundColor', `rgb(${br}, ${bg}, ${bb})`);
+            }
+        </script>
+
+        
+
+
+        
+
+    </body>
+    
+</html>
